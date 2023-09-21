@@ -8,7 +8,7 @@ import classes from "./modal.module.css";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
-import { addCheckIns } from "../../../../../store/addCheckIns";
+import { addCheckIns } from "../../../../store/addCheckIns";
 
 const style = {
   position: "absolute",
@@ -51,9 +51,9 @@ export default function BasicModal({ open, handleClose }) {
             {" "}
             <Typography
               id="modal-modal-title"
-              variant="h6"
+              variant="p"
               component="p"
-              style={{ fontWeight: "bold" }}
+              style={{ fontWeight: "500" }}
             >
               New CheckIn
             </Typography>
@@ -63,6 +63,7 @@ export default function BasicModal({ open, handleClose }) {
           <form onSubmit={handleSubmit}>
             <div style={{ padding: "2rem" }}>
               <TextField
+                size="small"
                 id="outlined-basic"
                 label="Check In title"
                 variant="outlined"
@@ -72,6 +73,7 @@ export default function BasicModal({ open, handleClose }) {
                 onChange={(e) => setTitle(e.target.value)}
               />
               <TextField
+                size="small"
                 id="outlined-basic"
                 label="Image Url"
                 variant="outlined"
@@ -88,13 +90,14 @@ export default function BasicModal({ open, handleClose }) {
                 display: "flex",
                 justifyContent: "flex-end",
                 padding: 2,
-                borderTop: "1px solid black",
+                borderTop: "1px solid rgba(0, 0, 0, 0.45)",
               }}
             >
-              <Button variant="outlined" onClick={handleClose}>
+              <Button variant="outlined" onClick={handleClose} size="small">
                 Cancel
               </Button>
               <Button
+                size="small"
                 variant="contained"
                 sx={{ backgroundColor: "black" }}
                 type="submit"

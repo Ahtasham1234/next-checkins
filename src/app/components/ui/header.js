@@ -1,6 +1,6 @@
 import Link from "next/link";
 import classes from "./header.module.css";
-import ImageAvatars from "./ui/avatar";
+import ImageAvatars from "./avatar";
 export default function Header() {
   return (
     <header className={classes.header}>

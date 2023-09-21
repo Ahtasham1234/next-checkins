@@ -1,14 +1,26 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, onSnapshot, query } from "firebase/firestore";
 import { db } from "./firebase";
 
 export async function getCheckIns() {
-  const querySnapshot = await getDocs(collection(db, "checkIns"));
-  const data = [];
-  querySnapshot.forEach((doc) => {
-    data.push({ id: doc.id, ...doc.data() });
+  const q = query(collection(db, "checkIns"));
 
-    // console.log(`${doc.id} => ${doc.data()}`);
+  return new Promise((resolve, reject) => {
+    const data = [];
+
+    const unsubscribe = onSnapshot(
+      q,
+      (querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          data.push({ id: doc.id, ...doc.data() });
+        });
+
+        // Resolve the promise with the fetched data
+        resolve(data);
+      },
+      (error) => {
+        // Reject the promise with an error if there's an issue
+        reject(error);
+      }
+    );
   });
-  //   console.log(data);
-  return data;
 }

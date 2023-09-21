@@ -1,0 +1,8 @@
+.tableCell {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+
+  font-weight: 500;
+  line-height: 22px;
+  word-wrap: break-word;
+}

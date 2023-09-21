@@ -4,9 +4,30 @@
   align-items: center;
   padding: 5rem 5%;
   height: 5rem;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #d9d9d9;
+}
+.main h1 {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 40px;
+  word-wrap: break-word;
+  margin: 0;
+}
+.main p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  word-wrap: break-word;
 }
 .main button {
   background-color: black;
+
   color: white;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  word-wrap: break-word;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.04);
+  border-radius: 2px;
+  text-transform: capitalize;
 }

@@ -2,7 +2,7 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import classes from "./main-header.module.css";
-import BasicModal from "../ui/ui/modal";
+import BasicModal from "../ui/modal";
 export default function MainHeader() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -16,7 +16,7 @@ export default function MainHeader() {
         </div>
         <div>
           <Button variant="contained" onClick={handleOpen}>
-            Add CheckIns
+            Add Check in
           </Button>
         </div>
       </div>
